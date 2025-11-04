@@ -1,0 +1,73 @@
+.env
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+.Python
+
+# Byte-compiled / cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+pip-delete-this-directory.txt
+
+# Django
+db.sqlite3
+*.sqlite3
+local_settings.py
+media/
+staticfiles/
+*.log
+
+# Testing, coverage, type checks
+.pytest_cache/
+.mypy_cache/
+.tox/
+.coverage
+.coverage.*
+.cache/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.iml
+.ropeproject/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary and misc
+*.swp
+*.swo
+*.pid
+*.seed
+*.cover
+*.log
+*.bak
+
+# C extensions, build artifacts
+*.so
+*.dylib
+*.pyd
+
+# Packages
+*.egg
+*.whl
+
+# Celery
+celerybeat-schedule
+
+# Ignore compiled python files anywhere
+*.pyc
