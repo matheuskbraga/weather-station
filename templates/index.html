@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estação Meteorológica</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; text-align: center; padding: 20px; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 400px; margin: 0 auto 30px auto; }
+        h1 { color: #333; }
+        .destaque { font-size: 24px; color: #007BFF; font-weight: bold; }
+        table { width: 100%; max-width: 600px; margin: 0 auto; border-collapse: collapse; background: white; }
+        th, td { padding: 12px; border-bottom: 1px solid #ddd; }
+        th { background-color: #007BFF; color: white; }
+        tr:hover { background-color: #f1f1f1; }
+    </style>
+</head>
+<body>
+
+    <h1>⛅ Monitoramento do Tempo</h1>
+
+    <div class="card">
+        <h2>Status Atual</h2>
+        {% if destaque %}
+            <p>Temperatura: <span class="destaque">{{ destaque[2] }}°C</span></p>
+            <p>Umidade: <span class="destaque">{{ destaque[3] }}%</span></p>
+            <small>Atualizado em: {{ destaque[1] }}</small>
+        {% else %}
+            <p>Aguardando primeiros dados...</p>
+        {% endif %}
+    </div>
+
+    <h3>Histórico Recente</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Data/Hora</th>
+                <th>Temp (°C)</th>
+                <th>Umidade (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for linha in leituras %}
+            <tr>
+                <td>{{ linha[1] }}</td>
+                <td>{{ linha[2] }}</td>
+                <td>{{ linha[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
